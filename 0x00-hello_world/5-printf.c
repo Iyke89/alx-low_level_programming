@@ -1,13 +1,12 @@
 #include <stdio.h>
 
 /**
- * main - prints exactly hello world
+ * main - diplay character the way it is
  *
- * Return: 0 when successfull
+ * Return: 0 on success
  */
-
 int main(void)
 {
-	printf("with proper grammar, but the outcome is a piece of art ,");
+	("with proper grammar, but the outcome is a piece of art,");
 	return (0);
 }
