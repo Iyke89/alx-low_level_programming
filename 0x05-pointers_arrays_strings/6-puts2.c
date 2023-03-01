@@ -1,8 +1,11 @@
 #include "main.h"
+#include <stdio.h>
+
 /**
- * puts2 - print strings
- * @str:function parameter
- * Return: 0
+ * puts2 - prints every other character of a string
+ * @str: string to be printed
+ *
+ * Return: always 0
  */
 void puts2(char *str)
 {
@@ -15,10 +18,11 @@ void puts2(char *str)
 	}
 	for (i = 0; i < count; i++)
 		str--;
+
 	for (i = 0; i < count; i++)
 	{
 		if (i % 2 == 0)
-		_putchar(str[i]);
+			putchar(str[i]);
 	}
-	_putchar('\n');
+	putchar('\n');
 }
