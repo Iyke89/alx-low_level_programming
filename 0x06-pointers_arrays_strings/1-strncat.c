@@ -6,6 +6,7 @@
  * @n: number of characters to be append
  * Return: concatenated string
  */
+
 char *_strncat(char *dest, char *src, int n)
 {
 	int destlen = 0;
