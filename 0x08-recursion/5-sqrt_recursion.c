@@ -1,30 +1,37 @@
-/** number - helps find the square root of natural squareroot numbers
- * @n: natural number starting from 1
- * @root: square root number to be found
- *
- * Return: square root of answer
- * if root is not natural square root returns -1
- * if root less than 0 returns -1
- */
-int number(int n, int root)
+#include "main.h"
+/**
+  * helperfunction - checks if sqrt of number exists
+  * @num: number
+  * @psqrt: possible sqrt of number
+  *
+  * Return: sqrt of number of -1  for error
+  */
+int helperfunction(int num, int psqrt)
 {
-	if (n * n == root)
-		return (n);
-	if (n == root)
-		return (-1);
-	return (1 * number(n + 1, root));
+	if ((psqrt * psqrt) == num)
+	{
+		return (psqrt);
+	}
+	else
+	{
+		if ((psqrt * psqrt) > num)
+			return (-1);
+		else
+			return (helperfunction(num, psqrt + 1));
+	}
 }
 
 /**
- * _sqrt_recursion - returns the natural square root of a number
- * @n: number for which natural square root should be found
- *
- * Return: natural square root n
- * if n does not have a natural sqaure toot, the function should return -1
- */
+  * _sqrt_recursion - returns the natural square root of a number
+  * @n: number to find sqrt of
+  *
+  * Return: squareroot of n
+  * -1 if n does not have a natural sqrt
+  */
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
-	return (number(1, n));
+	else
+		return (helperfunction(n, 0));
 }
