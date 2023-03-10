@@ -1,39 +1,30 @@
-#include "main.h"
-/**
- * _evaluate - evaluatte funtion sqrt
- * @i: integer
- * @n: integer
- * Return: evaluate sqrt
+/** number - helps find the square root of natural squareroot numbers
+ * @n: natural number starting from 1
+ * @root: square root number to be found
+ *
+ * Return: square root of answer
+ * if root is not natural square root returns -1
+ * if root less than 0 returns -1
  */
-int_evaluate(int i, int n)
+int number(int n, int root)
 {
-/*evaluate function*/
-if (n == 0 || n == 1)
-return (n);
-
-else if (i * i < n)
-return (_evaluate(i + 1, n));
-
-else if (i * i == n) /*condition base*/
-return (i);
-
-return (-1);
-
-return (-1);
-}
-/**
- * *_sqrt_recursion - evaluate sqrt
- * @n: interger
- * Return: sqrt_recursion
- */
-int_sqrt_recursion(int n)
-{
-	int i = 0;
-
-	if (i < 0) /*if n is negative*/
+	if (n * n == root)
+		return (n);
+	if (n == root)
 		return (-1);
-	else
-	{
-		return (_evaluate(i, n)); /*recursive call*/
-	}
+	return (1 * number(n + 1, root));
+}
+
+/**
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: number for which natural square root should be found
+ *
+ * Return: natural square root n
+ * if n does not have a natural sqaure toot, the function should return -1
+ */
+int _sqrt_recursion(int n)
+{
+	if (n < 0)
+		return (-1);
+	return (number(1, n));
 }
